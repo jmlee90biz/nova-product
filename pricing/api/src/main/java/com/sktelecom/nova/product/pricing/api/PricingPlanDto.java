@@ -1,4 +1,4 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.api;
+package com.sktelecom.nova.product.pricing.api;
 
 import java.math.BigDecimal;
 import java.util.UUID;

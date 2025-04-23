@@ -1,10 +1,9 @@
-package com.sktelecom.nova.modular.monolith.product.catalog.internal;
+package com.sktelecom.nova.product.catalog.internal;
 
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductCatalogService;
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductDto;
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductRegistrationRequest;
+import com.sktelecom.nova.product.catalog.api.ProductCatalogService;
+import com.sktelecom.nova.product.catalog.api.ProductDto;
+import com.sktelecom.nova.product.catalog.api.ProductRegistrationRequest;
 import io.swagger.v3.oas.annotations.tags.Tag;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

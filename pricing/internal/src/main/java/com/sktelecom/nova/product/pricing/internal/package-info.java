@@ -1,9 +1,10 @@
 @ApplicationModule(
-        displayName = "product-pricing",
+        displayName = "product-pricing-internal",
         allowedDependencies = {
-                "product.catalog::api"
+                "product.catalog.api",
+                "product.pricing.api"
         }
 )
-package com.sktelecom.nova.modular.monolith.product.pricing;
+package com.sktelecom.nova.product.pricing.internal;
 
 import org.springframework.modulith.ApplicationModule;

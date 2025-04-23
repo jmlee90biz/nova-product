@@ -1,14 +1,13 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.internal;
+package com.sktelecom.nova.product.pricing.internal;
 
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductCatalogService;
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductDto;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanRegistrationRequest;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanDto;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingPlanDto;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingService;
-import com.sktelecom.nova.modular.monolith.shared.kernel.EventPublisher;
-import com.sktelecom.nova.modular.monolith.shared.util.JoinUtil;
+
+import com.sktelecom.nova.product.catalog.api.ProductCatalogService;
+import com.sktelecom.nova.product.catalog.api.ProductDto;
+import com.sktelecom.nova.product.pricing.api.*;
+
+import com.sktelecom.nova.shared.util.JoinUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,13 +18,14 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class ProductPricingServiceImpl implements ProductPricingService {
     private final PricingPlanRepository pricingPlanRepository;
-    private final EventPublisher eventPublisher;
+    private final ApplicationEventPublisher eventPublisher;
 
     private final ProductCatalogService productCatalogService;
 
     @Override
     @Transactional
     public PricingPlanDto registerPricingPlan(PricingPlanRegistrationRequest pricingPlanRegistrationRequest) {
+
         PricingPlan registeredPricingPlan = pricingPlanRepository.save(
                 PricingPlan.createPricingPlan(
                         pricingPlanRegistrationRequest.productId(),
@@ -33,7 +33,7 @@ class ProductPricingServiceImpl implements ProductPricingService {
                         pricingPlanRegistrationRequest.price())
         );
 
-        eventPublisher.publish(registeredPricingPlan.createPricingPlanRegisteredEvent());
+        eventPublisher.publishEvent(registeredPricingPlan.createPricingPlanRegisteredEvent());
 
         return PricingPlanMapper.toPricingPlanDto(registeredPricingPlan);
     }

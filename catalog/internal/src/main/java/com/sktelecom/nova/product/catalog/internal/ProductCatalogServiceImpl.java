@@ -1,10 +1,10 @@
-package com.sktelecom.nova.modular.monolith.product.catalog.internal;
+package com.sktelecom.nova.product.catalog.internal;
 
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductCatalogService;
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductRegistrationRequest;
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductDto;
+import com.sktelecom.nova.product.catalog.api.ProductCatalogService;
+import com.sktelecom.nova.product.catalog.api.ProductDto;
+import com.sktelecom.nova.product.catalog.api.ProductRegistrationRequest;
 
-import com.sktelecom.nova.modular.monolith.shared.kernel.EventPublisher;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,15 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ProductCatalogServiceImpl implements ProductCatalogService {
     private final ProductRepository productRepository;
-    private final EventPublisher eventPublisher;
+    private final ApplicationEventPublisher eventPublisher;
+
+    public ProductCatalogServiceImpl(ProductRepository productReposity, EventPublisherWrapper eventPublisher) {
+        this.productRepository = productReposity;
+        this.eventPublisher = eventPublisher;
+    }
 
     @Override
     @Transactional
@@ -26,8 +31,9 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
                 Product.createProduct(productRegistrationRequest.name(), productRegistrationRequest.description())
         );
 
-        eventPublisher.publish(registeredProduct.createProductRegisteredEvent());
+        eventPublisher.publishEvent(registeredProduct.createProductRegisteredEvent());
 
+        System.out.println("Registered product: " + registeredProduct);
         return ProductMapper.toProductDto(registeredProduct);
     }
 

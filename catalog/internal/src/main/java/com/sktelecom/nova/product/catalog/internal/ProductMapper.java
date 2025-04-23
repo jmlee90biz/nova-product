@@ -1,6 +1,6 @@
-package com.sktelecom.nova.modular.monolith.product.catalog.internal;
+package com.sktelecom.nova.product.catalog.internal;
 
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductDto;
+import com.sktelecom.nova.product.catalog.api.ProductDto;
 
 class ProductMapper {
     static ProductDto toProductDto(Product product) {

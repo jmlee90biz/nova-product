@@ -1,9 +1,9 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.internal;
+package com.sktelecom.nova.product.pricing.internal;
 
-import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanRegistrationRequest;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanDto;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingPlanDto;
-import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingService;
+import com.sktelecom.nova.product.pricing.api.PricingPlanDto;
+import com.sktelecom.nova.product.pricing.api.PricingPlanRegistrationRequest;
+import com.sktelecom.nova.product.pricing.api.ProductPricingPlanDto;
+import com.sktelecom.nova.product.pricing.api.ProductPricingService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

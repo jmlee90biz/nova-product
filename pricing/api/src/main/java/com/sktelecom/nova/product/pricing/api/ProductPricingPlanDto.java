@@ -1,6 +1,7 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.api;
+package com.sktelecom.nova.product.pricing.api;
 
-import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductDto;
+
+import com.sktelecom.nova.product.catalog.api.ProductDto;
 
 import java.math.BigDecimal;
 import java.util.UUID;

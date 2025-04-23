@@ -1,4 +1,4 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.internal;
+package com.sktelecom.nova.product.pricing.internal;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

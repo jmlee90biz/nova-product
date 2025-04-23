@@ -1,4 +1,4 @@
-package com.sktelecom.nova.modular.monolith.product.catalog.api;
+package com.sktelecom.nova.product.catalog.api;
 
 import java.util.UUID;
 

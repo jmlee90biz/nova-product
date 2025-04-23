@@ -1,6 +1,6 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.internal;
+package com.sktelecom.nova.product.pricing.internal;
 
-import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanDto;
+import com.sktelecom.nova.product.pricing.api.PricingPlanDto;
 
 class PricingPlanMapper {
     static PricingPlanDto toPricingPlanDto(PricingPlan pricingPlan) {

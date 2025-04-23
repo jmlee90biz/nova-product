@@ -1,4 +1,4 @@
-package com.sktelecom.nova.modular.monolith.product.pricing.internal;
+package com.sktelecom.nova.product.pricing.internal;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

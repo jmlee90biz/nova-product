@@ -5,10 +5,10 @@ import org.springframework.modulith.core.ApplicationModules;
 import org.springframework.modulith.test.ApplicationModuleTest;
 
 @ApplicationModuleTest(ApplicationModuleTest.BootstrapMode.ALL_DEPENDENCIES)
-public class NovaCustomerServiceTest {
+public class NovaProductServiceTest {
     @Test
     void contextLoads() {
-        ApplicationModules modules = ApplicationModules.of(NovaCustomerService.class);
+        ApplicationModules modules = ApplicationModules.of(NovaProductService.class);
 
         modules.forEach(System.out::println);
 

@@ -1,4 +1,4 @@
-package com.sktelecom.nova.config;
+package com.sktelecom.nova.product.catalog.internal;
 
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;

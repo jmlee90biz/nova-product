@@ -12,6 +12,7 @@
         <module>catalog</module>
         <module>pricing</module>
         <module>product-service</module>
+        <module>catalog/client</module>
     </modules>
 
     <properties>

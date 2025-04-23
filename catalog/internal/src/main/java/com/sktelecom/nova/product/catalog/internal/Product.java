@@ -1,6 +1,6 @@
-package com.sktelecom.nova.modular.monolith.product.catalog.internal;
+package com.sktelecom.nova.product.catalog.internal;
 
-import com.sktelecom.nova.modular.monolith.product.catalog.event.ProductRegisteredEvent;
+import com.sktelecom.nova.product.catalog.event.ProductRegisteredEvent;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "product", schema = "product")
-class Product {
+public class Product {
     @Id
     private UUID id;
 
